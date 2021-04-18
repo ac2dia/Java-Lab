@@ -1,4 +1,4 @@
-package org.springframework.validation.custom_validation;
+package org.springframework.validation.validator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

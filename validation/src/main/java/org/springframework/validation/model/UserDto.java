@@ -1,7 +1,7 @@
 package org.springframework.validation.model;
 
 import lombok.*;
-import org.springframework.validation.custom_validation.Phone;
+import org.springframework.validation.validator.Phone;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
