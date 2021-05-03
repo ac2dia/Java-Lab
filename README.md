@@ -8,3 +8,5 @@
 - 2021.04.23 / **uploading files => thymeleaf** <br>
 
 - 2021.04.30 / **JWT Token => jjwt** <br>
+
+- 2021.05.03 / **spring session data redis => spring-session-data-redis** <br>
