@@ -1,19 +1,21 @@
 package com.example.mapperproject.dto;
 
-import javax.persistence.EntityListeners;
-import javax.persistence.MappedSuperclass;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 import lombok.Getter;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-@Builder
+
 @Getter
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
-public class BaseTimeDto<LocalDateTime> {
+public class BaseTimeDto implements Serializable {
 
-  private LocalDateTime createdDate;
+  private String createdDate;
+  private String modifiedDate;
 
-  private LocalDateTime modifiedDate;
+  protected BaseTimeDto() {
+  }
+
+  protected BaseTimeDto(String createdDate, String modifiedDate) {
+    this.createdDate = createdDate;
+    this.modifiedDate = modifiedDate;
+  }
 }

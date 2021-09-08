@@ -1,24 +1,19 @@
 package com.example.mapperproject.domain;
 
 import com.sun.istack.NotNull;
+import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
+@Getter
 @Entity
 @Table(name = "brands")
-@Builder
-@Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
-public class Brands {
+public class Brands extends BaseTimeEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,4 +27,17 @@ public class Brands {
 
   @NotNull
   private int est;
+
+  protected Brands() {
+  }
+
+  @Builder
+  protected Brands(String name, String email, int est,
+      String createdDate, String modifiedDate) {
+    super(createdDate, modifiedDate);
+
+    this.name = name;
+    this.email = email;
+    this.est = est;
+  }
 }
