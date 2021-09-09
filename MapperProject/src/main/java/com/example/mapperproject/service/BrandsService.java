@@ -23,8 +23,10 @@ public class BrandsService {
     repository.save(e);
   }
 
-  public BrandsDto select(String id) {
-    return BrandsMapper.INSTANCE.toDto(repository.getById(id));
+  public BrandsDto select(Long id) {
+    Brands brands = repository.getById(id);
+
+    return BrandsMapper.INSTANCE.toDto(brands);
   }
 
   public List<BrandsDto> selectAll() {
@@ -33,7 +35,7 @@ public class BrandsService {
     return BrandsMapper.INSTANCE.toDtoList(brandsList);
   }
 
-  public void update(String id, BrandsDto d) {
+  public void update(Long id, BrandsDto d) {
     if (null == d) {
       return;
     }
@@ -43,7 +45,7 @@ public class BrandsService {
     repository.save(e);
   }
 
-  public void delete(String id) {
+  public void delete(Long id) {
     if (!repository.findById(id).isPresent()) {
       return;
     }

@@ -31,17 +31,17 @@ public class BrandsController {
   }
 
   @GetMapping(value = "/brands/{id}")
-  public BrandsDto select(@PathVariable String id) {
+  public BrandsDto select(@PathVariable Long id) {
     return service.select(id);
   }
 
   @PutMapping(value = "/brands/{id}")
-  public void update(@PathVariable String id, @RequestBody BrandsDto d) {
+  public void update(@PathVariable Long id, @RequestBody BrandsDto d) {
     service.update(id, d);
   }
 
   @DeleteMapping(value = "/brands/{id}")
-  public void delete(@PathVariable String id) {
+  public void delete(@PathVariable Long id) {
     service.delete(id);
   }
 
