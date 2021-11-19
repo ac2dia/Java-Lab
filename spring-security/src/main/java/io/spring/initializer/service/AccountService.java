@@ -2,10 +2,10 @@ package io.spring.initializer.service;
 
 import io.spring.initializer.domain.Account;
 import io.spring.initializer.dto.AccountDto;
+import io.spring.initializer.dto.UserAccount;
 import io.spring.initializer.mapper.AccountMapper;
 import io.spring.initializer.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -25,11 +25,13 @@ public class AccountService implements UserDetailsService {
       throw new UsernameNotFoundException(username);
     }
 
-    return User.builder()
-        .username(account.getUsername())
-        .password(account.getPassword())
-        .roles(account.getRole())
-        .build();
+    return new UserAccount(account);
+
+//    return User.builder()
+//        .username(account.getUsername())
+//        .password(account.getPassword())
+//        .roles(account.getRole())
+//        .build();
   }
 
   public AccountDto createNew(AccountDto accountDto) {
