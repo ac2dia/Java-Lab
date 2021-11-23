@@ -1,0 +1,13 @@
+spring:
+  data:
+    mongodb: # docker run -d --name mongo -p27017:27017 -e MONGO_INITDB_ROOT_USERNAME=cloudit -e MONGO_INITDB_ROOT_PASSWORD=cloudit mongo
+      authentication-database: admin
+      username: cloudit
+      password: cloudit
+      database: test
+      port: 27017
+      host: 192.168.120.4
+
+logging:
+  level:
+    org.springframework.web.webfluxdemo: debug
