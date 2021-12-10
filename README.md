@@ -18,3 +18,5 @@
 - 2021.11.23 / **REST API based spring-webflux with mongodb => spring-webflux + data-mongodb-reactive** <br>
 
 - 2021.12.10 / **Spring OAuth2-client with google => spring-oauth2-client** <br>
+
+- 2021.12.10 / **Spring JWT with Redis => io.jsonwebtoken + data-redis** <br>
