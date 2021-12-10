@@ -16,3 +16,5 @@
 - 2021.11.19 / **spring security => spring-security** <br>
 
 - 2021.11.23 / **REST API based spring-webflux with mongodb => spring-webflux + data-mongodb-reactive** <br>
+
+- 2021.12.10 / **Spring OAuth2-client with google => spring-oauth2-client** <br>
