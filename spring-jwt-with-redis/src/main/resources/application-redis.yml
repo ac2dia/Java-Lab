@@ -1,0 +1,15 @@
+spring:
+  profiles: redis
+  cache:
+    type: redis
+  redis:
+    host: localhost
+    port: 6379
+    lettuce:
+      pool:
+        min-idle: 2
+        max-idle: 10
+        max-active: 10
+
+jwt:
+  secret: 8f78b9030a724ff39a38338a187790a6ba76d71dff784f86a0593288d02071c18f78b9030a724ff39a38338a187790a6ba76d71dff784f86a0593288d02071c1
