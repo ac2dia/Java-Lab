@@ -20,3 +20,5 @@
 - 2021.12.10 / **Spring OAuth2-client with google => spring-oauth2-client** <br>
 
 - 2021.12.10 / **Spring JWT with Redis => io.jsonwebtoken + data-redis** <br>
+
+- 2022.03.15 / **Effective Java 3/e => Finalizer Attack** <br>
