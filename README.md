@@ -22,3 +22,5 @@
 - 2021.12.10 / **Spring JWT with Redis => io.jsonwebtoken + data-redis** <br>
 
 - 2022.03.15 / **Effective Java 3/e => Finalizer Attack** <br>
+
+- 2022.04.16 / **Domain 기반 Spring Data Jpa with MapStruct -> spring-data-jpa + mapstruct** <br>
