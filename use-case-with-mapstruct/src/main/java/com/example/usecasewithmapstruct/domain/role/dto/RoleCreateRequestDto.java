@@ -3,6 +3,7 @@ package com.example.usecasewithmapstruct.domain.role.dto;
 import com.example.usecasewithmapstruct.global.Constants.ROLE_TYPE;
 import com.sun.istack.NotNull;
 import java.io.Serializable;
+import javax.validation.constraints.Max;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,9 +18,11 @@ import lombok.ToString;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class RoleCreateRequestDto implements Serializable {
 
+  @Max(20)
   @NotNull
   private ROLE_TYPE type;
 
+  @Max(20)
   @NotNull
   private String name;
 

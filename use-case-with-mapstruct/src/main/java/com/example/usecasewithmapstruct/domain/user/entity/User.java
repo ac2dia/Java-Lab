@@ -19,7 +19,7 @@ import lombok.experimental.SuperBuilder;
 @Entity(name = "user")
 public class User extends BaseAuditingEntity {
 
-  @Column(unique = true, length = 40)
+  @Column(unique = true, length = 20)
   private String username;
 
   @Column(nullable = false, length = 60)
