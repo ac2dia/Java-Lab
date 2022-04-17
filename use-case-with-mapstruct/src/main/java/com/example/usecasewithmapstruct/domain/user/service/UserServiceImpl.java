@@ -12,6 +12,7 @@ import com.example.usecasewithmapstruct.domain.user.entity.User;
 import com.example.usecasewithmapstruct.domain.user.entity.UserRole;
 import com.example.usecasewithmapstruct.domain.user.mapper.user.UserCreateMapper;
 import com.example.usecasewithmapstruct.domain.user.mapper.user.UserResponseMapper;
+import com.example.usecasewithmapstruct.domain.user.mapper.userrole.UserRoleCreateMapper;
 import com.example.usecasewithmapstruct.domain.user.mapper.userrole.UserRoleResponseMapper;
 import com.example.usecasewithmapstruct.domain.user.repository.UserRepository;
 import com.example.usecasewithmapstruct.domain.user.repository.UserRoleRepository;
@@ -32,7 +33,7 @@ public class UserServiceImpl implements UserService {
   @Override
   public List<UserResponseDto> getUsers() {
     List<User> userList = userRepository.findAll();
-    if (userList == null) {
+    if (userList.isEmpty()) {
       return new ArrayList<>();
     }
 
@@ -81,13 +82,18 @@ public class UserServiceImpl implements UserService {
 
   // user_role
   @Override
-  public List<UserRoleResponseDto> getUserRoles() {
-    List<UserRole> userRoleList = userRoleRepository.findAll();
-    if (userRoleList == null) {
+  public List<UserRoleResponseDto> getUserRoleByUser(String userId) {
+    User user = userRepository.findById(userId).orElse(null);
+    if (user == null) {
+      throw new NoSuchElementException("Failed to find user by id {" + userId + "}");
+    }
+
+    List<UserRole> userRole = userRoleRepository.findByUser(user);
+    if (userRole.isEmpty()) {
       return new ArrayList<>();
     }
 
-    return UserRoleResponseMapper.INSTANCE.toDtoList(userRoleList);
+    return UserRoleResponseMapper.INSTANCE.toDtoList(userRole);
   }
 
   @Override
@@ -95,21 +101,6 @@ public class UserServiceImpl implements UserService {
     UserRole userRole = userRoleRepository.findById(id).orElse(null);
     if (userRole == null) {
       throw new NoSuchElementException("Failed to find user_role by id {" + id + "}");
-    }
-
-    return UserRoleResponseMapper.INSTANCE.toDto(userRole);
-  }
-
-  @Override
-  public UserRoleResponseDto getUserRoleByUser(String userId) {
-    User user = userRepository.findById(userId).orElse(null);
-    if (user == null) {
-      throw new NoSuchElementException("Failed to find user by id {" + userId + "}");
-    }
-
-    UserRole userRole = userRoleRepository.findByUser(user).orElse(null);
-    if (userRole == null) {
-      throw new NoSuchElementException("Failed to find user_role by user {" + user.getId() + "}");
     }
 
     return UserRoleResponseMapper.INSTANCE.toDto(userRole);
@@ -126,10 +117,11 @@ public class UserServiceImpl implements UserService {
       throw new NoSuchElementException("Failed to find role by {" + dto.getRoleId() + "}");
     }
 
-    UserRole userRole = userRoleRepository.findByUserAndRole(user, role).orElse(null);
-    if (userRole == null) {
+    if (userRoleRepository.existsByUserAndRole(user, role)) {
       throw new NoSuchElementException("Failed to find user_role");
     }
+
+    UserRole userRole = userRoleRepository.save(UserRoleCreateMapper.INSTANCE.toEntity(dto));
 
     return UserRoleResponseMapper.INSTANCE.toDto(userRole);
   }

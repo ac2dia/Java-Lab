@@ -22,7 +22,7 @@ public class RoleServiceImpl implements RoleService {
   @Override
   public List<RoleResponseDto> getRoles() {
     List<Role> roleList = roleRepository.findAll();
-    if (roleList == null) {
+    if (roleList.isEmpty()) {
       return new ArrayList<>();
     }
 

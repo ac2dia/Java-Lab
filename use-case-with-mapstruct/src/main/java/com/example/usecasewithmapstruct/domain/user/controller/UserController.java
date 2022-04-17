@@ -69,8 +69,8 @@ public class UserController {
 
   // user_role
   @GetMapping("/roles")
-  public ResponseEntity<List<UserRoleResponseDto>> getUserRoles() {
-    List<UserRoleResponseDto> userRoleResponseDtoList = userService.getUserRoles();
+  public ResponseEntity<List<UserRoleResponseDto>> getUserRoles(@RequestParam String userId) {
+    List<UserRoleResponseDto> userRoleResponseDtoList = userService.getUserRoleByUser(userId);
 
     return ResponseEntity.status(HttpStatus.OK).body(userRoleResponseDtoList);
   }
@@ -78,13 +78,6 @@ public class UserController {
   @GetMapping("/roles/{id}")
   public ResponseEntity<UserRoleResponseDto> getUserRoleById(@PathVariable String id) {
     UserRoleResponseDto userRoleResponseDto = userService.getUserRoleById(id);
-
-    return ResponseEntity.status(HttpStatus.OK).body(userRoleResponseDto);
-  }
-
-  @GetMapping("/roles")
-  public ResponseEntity<UserRoleResponseDto> getUserRoleByUser(@RequestParam String userId) {
-    UserRoleResponseDto userRoleResponseDto = userService.getUserRoleByUser(userId);
 
     return ResponseEntity.status(HttpStatus.OK).body(userRoleResponseDto);
   }

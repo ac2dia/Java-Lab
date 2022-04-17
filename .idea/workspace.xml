@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="29f0a965-1b59-4b99-b38a-df50cee3f015" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="ProjectId" id="27rV9WWMnJ9tF9Tt68jZ3tjKufY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.formatter.settings.were.checked" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="29f0a965-1b59-4b99-b38a-df50cee3f015" name="Changes" comment="" />
+      <created>1650078046404</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650078046404</updated>
+      <workItem from="1650078048820" duration="348000" />
+    </task>
+    <task id="LOCAL-00001" summary=" feat: 초기 환경 및 h2 옵션 값 설정">
+      <created>1650078213026</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1650078213026</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: user domain 구현&#10;&#10;- controller, service, repository layer 구현&#10;- entity, dto 구현&#10;- mapstruct 기반 mapper 구현">
+      <created>1650078255529</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1650078255529</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: role domain 구현&#10;&#10;- controller, service, repository layer 구현&#10;- entity, dto 구현&#10;- mapstruct 기반 mapper 구현">
+      <created>1650078270195</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1650078270195</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: user_role domain 구현&#10;&#10;- controller, service, repository layer 구현&#10;- entity, dto 구현&#10;- mapstruct 기반 mapper 구현">
+      <created>1650078279151</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1650078279151</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update README.md">
+      <created>1650078367661</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1650078367661</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value=" feat: 초기 환경 및 h2 옵션 값 설정" />
+    <MESSAGE value="feat: user domain 구현&#10;&#10;- controller, service, repository layer 구현&#10;- entity, dto 구현&#10;- mapstruct 기반 mapper 구현" />
+    <MESSAGE value="feat: role domain 구현&#10;&#10;- controller, service, repository layer 구현&#10;- entity, dto 구현&#10;- mapstruct 기반 mapper 구현" />
+    <MESSAGE value="feat: user_role domain 구현&#10;&#10;- controller, service, repository layer 구현&#10;- entity, dto 구현&#10;- mapstruct 기반 mapper 구현" />
+    <MESSAGE value="Update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README.md" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+</project>

@@ -23,11 +23,9 @@ public interface UserService {
 
 
   // user_role
-  List<UserRoleResponseDto> getUserRoles();
+  List<UserRoleResponseDto> getUserRoleByUser(String userId);
 
   UserRoleResponseDto getUserRoleById(String id);
-
-  UserRoleResponseDto getUserRoleByUser(String userId);
 
   UserRoleResponseDto createUserRole(UserRoleCreateRequestDto dto);
 
