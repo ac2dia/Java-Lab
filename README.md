@@ -24,3 +24,5 @@
 - 2022.03.15 / **Effective Java 3/e => Finalizer Attack** <br>
 
 - 2022.04.16 / **Domain 기반 Spring Data Jpa with MapStruct -> spring-data-jpa + mapstruct** <br>
+
+- 2022.05.16 / **InfluxDB 1.8 demo -> spring-data-influxdb + influxdb-java** <br>
