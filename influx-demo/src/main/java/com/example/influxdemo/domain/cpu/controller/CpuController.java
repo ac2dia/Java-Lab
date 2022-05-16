@@ -2,24 +2,22 @@ package com.example.influxdemo.domain.cpu.controller;
 
 import com.example.influxdemo.domain.cpu.measurement.CPU;
 import com.example.influxdemo.domain.cpu.service.InfluxService;
-import org.springframework.web.bind.annotation.GetMapping;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+@RequiredArgsConstructor
 @RestController
 public class CpuController {
 
   private final InfluxService influxService;
 
-  public CpuController(InfluxService influxService) {
-    this.influxService = influxService;
-  }
-
-  @GetMapping("/")
-  public void writeCpuData() {
-    CPU cpu = new CPU();
-    cpu.setVersion("1");
-    cpu.setUse("2");
-    cpu.setIdle("3");
+  @PostMapping("/cpu")
+  public void writeCpuData(@RequestBody CPU cpu) {
+//    cpu.setVersion("Intel(R) Core(TM) i5-1038NG7 CPU @ 2.00GHz");
+//    cpu.setUse(13.66);
+//    cpu.setIdle(66.88);
 
     influxService.write(cpu);
   }

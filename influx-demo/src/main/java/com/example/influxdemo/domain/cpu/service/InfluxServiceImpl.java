@@ -2,18 +2,18 @@ package com.example.influxdemo.domain.cpu.service;
 
 import com.example.influxdemo.domain.cpu.measurement.CPU;
 import javax.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.influxdb.dto.Point;
 import org.springframework.data.influxdb.InfluxDBTemplate;
 import org.springframework.stereotype.Service;
 
+@RequiredArgsConstructor
 @Service
+@Slf4j
 public class InfluxServiceImpl implements InfluxService {
 
   private final InfluxDBTemplate<Point> influxDBTemplate;
-
-  public InfluxServiceImpl(InfluxDBTemplate<Point> influxDBTemplate) {
-    this.influxDBTemplate = influxDBTemplate;
-  }
 
   @PostConstruct
   public void init() {
@@ -22,8 +22,8 @@ public class InfluxServiceImpl implements InfluxService {
 
   @Override
   public void write(CPU cpu) {
-    influxDBTemplate.write(Point.measurementByPOJO(CPU.class).addFieldsFromPOJO(cpu).build());
+    log.info(cpu.toString());
 
-    System.out.println(cpu.toString());
+    influxDBTemplate.write(Point.measurementByPOJO(CPU.class).addFieldsFromPOJO(cpu).build());
   }
 }
